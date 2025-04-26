@@ -25,35 +25,55 @@ export default function Header() {
   }, [scrolled])
 
   return (
-    <header className="sticky top-0 z-50 px-4 py-3">
-      <div className="max-w-6xl mx-auto bg-gray-50 rounded-full shadow-md px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center">
-          <Link href="/" className="text-2xl font-bold text-green-900 flex items-center">
-            granola
-            <span className="ml-1 h-6 w-0.5 bg-green-400"></span>
-          </Link>
+    <header className="sticky top-0 z-50 bg-white">
+      {/* Desktop Navigation - Centered with max-width */}
+      <div className="hidden md:flex justify-center px-4 py-3">
+        <div className="w-full max-w-2xl bg-gray-50 rounded-full shadow-md px-5 py-3 flex items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/" className="text-xl font-bold text-green-900 flex items-center">
+              granola
+              <span className="ml-1 h-5 w-0.5 bg-green-400"></span>
+            </Link>
+          </div>
+          <div className="flex items-center space-x-6">
+            <Link href="/pricing" className="text-gray-500 hover:text-gray-700 font-medium text-sm">
+              Pricing
+            </Link>
+            <Link href="/news" className="text-gray-500 hover:text-gray-700 font-medium text-sm">
+              News
+            </Link>
+            <Link href="/careers" className="text-gray-500 hover:text-gray-700 font-medium text-sm">
+              Careers
+            </Link>
+            <Link
+              href="/download"
+              className={`flex items-center space-x-1.5 rounded-full px-4 py-1.5 transition-colors duration-300 text-sm ${
+                scrolled ? "bg-green-300 hover:bg-green-400" : "bg-white border border-gray-200 hover:bg-gray-50"
+              }`}
+            >
+              <AppleIcon className="h-4 w-4" />
+              <span className="font-medium">Download</span>
+            </Link>
+          </div>
         </div>
-        <div className="hidden md:flex items-center space-x-8">
-          <Link href="/pricing" className="text-gray-500 hover:text-gray-700 font-medium">
-            Pricing
-          </Link>
-          <Link href="/news" className="text-gray-500 hover:text-gray-700 font-medium">
-            News
-          </Link>
-          <Link href="/careers" className="text-gray-500 hover:text-gray-700 font-medium">
-            Careers
-          </Link>
-        </div>
-        <Link
-          href="/download"
-          className={`flex items-center space-x-2 rounded-full px-6 py-2.5 transition-colors duration-300 ${
-            scrolled ? "bg-green-300 hover:bg-green-400" : "bg-white border border-gray-200 hover:bg-gray-50"
-          }`}
-        >
-          <AppleIcon className="h-5 w-5" />
-          <span className="font-medium">Download</span>
+      </div>
+
+      {/* Mobile Navigation - Full width with hamburger */}
+      <div className="md:hidden px-4 py-3 flex items-center justify-between">
+        <Link href="/" className="text-xl font-bold text-green-900 flex items-center">
+          granola
+          <span className="ml-1 h-5 w-0.5 bg-green-400"></span>
         </Link>
-        <div className="md:hidden">
+        <div className="flex items-center space-x-3">
+          <Link
+            href="/download"
+            className={`flex items-center space-x-1.5 rounded-full px-4 py-1.5 transition-colors duration-300 text-sm ${
+              scrolled ? "bg-green-300 hover:bg-green-400" : "bg-white border border-gray-200 hover:bg-gray-50"
+            }`}
+          >
+            <AppleIcon className="h-4 w-4" />
+            <span className="font-medium">Download</span>
+          </Link>
           <MobileMenu scrolled={scrolled} />
         </div>
       </div>
