@@ -1,11 +1,12 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { AppleIcon, X, Menu } from "lucide-react"
+import { useState } from "react";
+import Link from "next/link";
+import { X, Menu } from "lucide-react";
+import GranolaLogo from "./ui/granolaLogo";
 
 export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
@@ -14,7 +15,7 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-white z-50 flex flex-col">
+        <div className="fixed inset-0 bg-white z-50 flex flex-col max-h-fit">
           {/* Menu Header */}
           <div className="px-4 py-3 flex items-center justify-between">
             <Link
@@ -22,8 +23,7 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
               className="text-xl font-bold text-green-900 flex items-center"
               onClick={() => setIsOpen(false)}
             >
-              granola
-              <span className="ml-1 h-5 w-0.5 bg-green-400"></span>
+              <GranolaLogo/>
             </Link>
             <div className="flex items-center space-x-3">
               <Link
@@ -31,8 +31,7 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
                 className="flex items-center space-x-1.5 rounded-full px-4 py-1.5 text-sm bg-green-300"
                 onClick={() => setIsOpen(false)}
               >
-                <AppleIcon className="h-4 w-4" />
-                <span className="font-medium">Download</span>
+                <span className="font-medium">Get the App</span>
               </Link>
               <button onClick={() => setIsOpen(false)} className="p-1">
                 <X className="h-6 w-6" />
@@ -41,20 +40,32 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
           </div>
 
           {/* Main Navigation Links */}
-          <div className="flex flex-col items-end space-y-8 text-4xl text-gray-500 font-normal px-8 mt-16">
-            <Link href="/pricing" className="hover:text-gray-700" onClick={() => setIsOpen(false)}>
+          <div className="flex flex-col items-end space-y-3 antialiased font-[600] text-[2.5rem] -mr-2 text-gray-500 px-8 mt-4">
+            <Link
+              href="/pricing"
+              className="hover:text-gray-700"
+              onClick={() => setIsOpen(false)}
+            >
               Pricing
             </Link>
-            <Link href="/news" className="hover:text-gray-700" onClick={() => setIsOpen(false)}>
+            <Link
+              href="/news"
+              className="hover:text-gray-700"
+              onClick={() => setIsOpen(false)}
+            >
               News
             </Link>
-            <Link href="/careers" className="hover:text-gray-700" onClick={() => setIsOpen(false)}>
+            <Link
+              href="/careers"
+              className="hover:text-gray-700"
+              onClick={() => setIsOpen(false)}
+            >
               Careers
             </Link>
           </div>
 
           {/* Footer Links */}
-          <div className="mt-auto px-8 pb-8">
+          <div className="mt-4 px-8 pb-8 pt-28">
             <div className="flex flex-wrap justify-end gap-x-6 gap-y-2 text-gray-500 text-sm mb-4">
               <Link href="/help" className="hover:text-gray-700">
                 Help Center
@@ -69,7 +80,10 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
                 Privacy & Security
               </Link>
               <div className="flex items-center space-x-4">
-                <Link href="https://linkedin.com" className="hover:text-gray-700">
+                <Link
+                  href="https://linkedin.com"
+                  className="hover:text-gray-700"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -80,7 +94,10 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                   </svg>
                 </Link>
-                <Link href="https://twitter.com" className="hover:text-gray-700">
+                <Link
+                  href="https://twitter.com"
+                  className="hover:text-gray-700"
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -117,5 +134,5 @@ export default function MobileMenu({ scrolled }: { scrolled: boolean }) {
         </div>
       )}
     </div>
-  )
+  );
 }

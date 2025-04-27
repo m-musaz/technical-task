@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { AppleIcon } from "lucide-react"
 import MobileMenu from "./mobile-menu"
+import GranolaLogo from "./ui/granolaLogo";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -25,14 +26,13 @@ export default function Header() {
   }, [scrolled])
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
+    <header className="sticky top-0 z-50 bg-white md:bg-transparent">
       {/* Desktop Navigation - Centered with max-width */}
-      <div className="hidden md:flex justify-center px-4 py-3">
+      <div className="hidden md:flex justify-center px-4 py-3 max-w-fit mx-auto">
         <div className="w-full max-w-2xl bg-gray-50 rounded-full shadow-md px-5 py-3 flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-bold text-green-900 flex items-center">
-              granola
-              <span className="ml-1 h-5 w-0.5 bg-green-400"></span>
+              <GranolaLogo/>
             </Link>
           </div>
           <div className="flex items-center space-x-6">
@@ -61,8 +61,7 @@ export default function Header() {
       {/* Mobile Navigation - Full width with hamburger */}
       <div className="md:hidden px-4 py-3 flex items-center justify-between">
         <Link href="/" className="text-xl font-bold text-green-900 flex items-center">
-          granola
-          <span className="ml-1 h-5 w-0.5 bg-green-400"></span>
+          <GranolaLogo/>
         </Link>
         <div className="flex items-center space-x-3">
           <Link
