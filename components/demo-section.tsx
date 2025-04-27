@@ -29,7 +29,7 @@ export default function DemoSection() {
 
               {/* — Right: transcript box */}
               <div className="flex-1 flex flex-col gap-4 pt-6">
-                <p className="text-xl text-gray-700 font-medium">
+                <p className="text-xl text-center text-gray-700 font-medium">
                   Your notes + transcript
                 </p>
                 <div className="flex-1 flex flex-col min-h-0 bg-white rounded-lg shadow-lg overflow-hidden">
@@ -89,7 +89,7 @@ export default function DemoSection() {
 
           {/* ─── Right Column: AI enhanced ─── */}
           <div className="flex flex-col space-y-4">
-            <p className="text-xl text-gray-700 font-medium flex flex-row">
+            <p className="text-xl justify-center text-gray-700 font-medium flex flex-row">
               <Sparkles color="#94f27f" />
               AI enhanced
             </p>
