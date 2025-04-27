@@ -7,7 +7,11 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Granola - The AI notepad for meetings",
   description: "Granola takes your raw meeting notes and makes them awesome",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: "https://www.granola.ai/favicon.ico"
+  }
+  
 }
 
 export default function RootLayout({

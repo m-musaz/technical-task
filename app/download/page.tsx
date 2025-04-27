@@ -14,7 +14,7 @@ export default function DownloadPage() {
             className="flex items-center justify-center space-x-3 bg-green-400 hover:bg-green-500 text-black rounded-full px-6 py-3 text-lg font-medium transition-colors w-full"
           >
             <AppleIcon className="h-5 w-5" />
-            <span>Download for Mac</span>
+            <span> Download for Mac</span>
           </Link>
         </div>
 

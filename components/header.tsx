@@ -35,14 +35,14 @@ export default function Header() {
               <GranolaLogo/>
             </Link>
           </div>
-          <div className="flex items-center space-x-6">
-            <Link href="/pricing" className="text-gray-500 hover:text-gray-700 font-medium text-sm">
+          <div className="flex items-center space-x-1">
+            <Link href="/pricing" className="text-gray-500 hover:text-gray-700 hover:bg-black/5 hover:rounded-xl px-3 py-1.5 font-medium text-sm">
               Pricing
             </Link>
-            <Link href="/news" className="text-gray-500 hover:text-gray-700 font-medium text-sm">
+            <Link href="/news" className="text-gray-500 hover:text-gray-700 hover:bg-black/5 hover:rounded-xl px-3 py-1.5 font-medium text-sm">
               News
             </Link>
-            <Link href="/careers" className="text-gray-500 hover:text-gray-700 font-medium text-sm">
+            <Link href="/careers" className="text-gray-500 hover:text-gray-700 hover:bg-black/5 hover:rounded-xl px-3 py-1.5 font-medium text-sm">
               Careers
             </Link>
             <Link
@@ -51,8 +51,8 @@ export default function Header() {
                 scrolled ? "bg-green-300 hover:bg-green-400" : "bg-white border border-gray-200 hover:bg-gray-50"
               }`}
             >
-              <AppleIcon className="h-4 w-4" />
-              <span className="font-medium">Download</span>
+              
+              <span className="font-medium"> Download</span>
             </Link>
           </div>
         </div>
@@ -70,8 +70,7 @@ export default function Header() {
               scrolled ? "bg-green-300 hover:bg-green-400" : "bg-white border border-gray-200 hover:bg-gray-50"
             }`}
           >
-            <AppleIcon className="h-4 w-4" />
-            <span className="font-medium">Download</span>
+            <span className="font-medium">Get the App</span>
           </Link>
           <MobileMenu scrolled={scrolled} />
         </div>

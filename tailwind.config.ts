@@ -84,6 +84,18 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        audiowave1: {
+          '0%, 100%': { height: '8px' },
+          '50%':     { height: '16px' },
+        },
+        audiowave2: {
+          '0%, 100%': { height: '12px' },
+          '50%':     { height: '20px' },
+        },
+        audiowave3: {
+          '0%, 100%': { height: '10px' },
+          '50%':     { height: '14px' },
+        },
         "accordion-down": {
           from: {
             height: "0",
@@ -104,6 +116,9 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "audiowave1": 'audiowave1 1s ease-in-out infinite',
+        "audiowave2": 'audiowave2 1.2s ease-in-out infinite',
+        "audiowave3": 'audiowave3 0.8s ease-in-out infinite',
       },
     },
   },

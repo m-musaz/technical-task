@@ -7,12 +7,16 @@ export default function Home() {
   return (
     <main className="min-h-screen relative">
       {/* Main background gradient - starts from bottom middle and fades to white at edges */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-green-200 via-green-50 to-white -z-10"></div>
+      <div style={{
+    background: 'radial-gradient(at 53% 78%, rgba(255, 255, 0, 0.3) 0px, transparent 50%), ' +
+                'radial-gradient(at 71% 91%, rgba(51, 255, 0, 0.3) 0px, transparent 50%), ' +
+                'radial-gradient(at 31% 91%, rgba(255, 128, 0, 0.17) 0px, transparent 50%)'
+  }} className="absolute inset-0 -z-10"></div>
 
       <Header />
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-12 md:py-24 text-center relative">
+      <section className="container mx-auto -mb-8 px-4 py-12 md:py-24 text-center relative">
         <div className="max-w-4xl mx-auto">
           {/* iOS Early Access Button */}
           <div className="flex justify-center mb-12">
@@ -52,10 +56,10 @@ export default function Home() {
           <div className="flex justify-center mb-16">
             <Link
               href="/download-mac"
-              className="flex items-center space-x-3 bg-green-400 hover:bg-green-500 text-black rounded-full px-8 py-4 text-lg font-medium transition-colors"
+              className="flex items-center space-x-3 bg-[#81de67] hover:bg-green-500 text-black rounded-full px-8 py-4 text-lg font-medium transition-colors"
             >
-              <AppleIcon className="h-6 w-6" />
-              <span>Download Granola for Mac</span>
+              <span className="block md:hidden">Send me a download ink</span>
+              <span className="hidden md:block">  Download Granola for Mac</span>
             </Link>
           </div>
         </div>
